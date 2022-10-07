@@ -53,14 +53,14 @@ const getUserByID = (id) => {
   return data;
 };
 
-const createUser = (first_name, last_name, email, password, birthday) => {
+const createUser = (data) => {
   const newUser = {
     id: uuid.v4(),
-    first_name,
-    last_name,
-    email,
-    password,
-    birthday
+    firstName: data.first_name,
+    lastName: data.last_name,
+    email: data.email,
+    password: data.password,
+    birthday: data.birthday
   };
   
   usersDB.push(newUser);

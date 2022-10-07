@@ -19,9 +19,9 @@ const getUser = (req, res) => {
 };
 
 const createNewUser = (req, res) => {
-  const {first_name, last_name, email, password, birthday} = req.boby;
+  const data = req.boby;
 
-  if(first_name && last_name && email && password && birthday) {
+  if(data.firstName && data.lastName && data.email && data.password && data.birthday) {
     const data = createUser();
 
     res.status(201).json(data);
@@ -30,6 +30,16 @@ const createNewUser = (req, res) => {
   }
 };
 
+/*
+only to prove the function createNewUser (post)
+{
+  "firstName": "Elena",
+  "lastName": "Garro",
+  "email": "elga@yahoo.com",
+  "password": "HteQ34#45&",
+  "birthday": "1916-12-11"
+}
+*/
 module.exports = {
   getUsers,
   getUser,
