@@ -56,8 +56,8 @@ const getUserByID = (id) => {
 const createUser = (data) => {
   const newUser = {
     id: uuid.v4(),
-    firstName: data.first_name,
-    lastName: data.last_name,
+    first_name: data.first_name,
+    last_name: data.last_name,
     email: data.email,
     password: data.password,
     birthday: data.birthday
@@ -67,7 +67,17 @@ const createUser = (data) => {
 
   return newUser;
 };
-
+/*
+console.log(createUser(
+  {
+    "firstName": "Elena",
+    "lastName": "Garro",
+    "email": "elga@yahoo.com",
+    "password": "HteQ34#45&",
+    "birthday": "1916-12-11"
+  }
+))
+*/
 module.exports = {
   getAllUsers,
   getUserByID,

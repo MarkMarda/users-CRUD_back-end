@@ -19,16 +19,17 @@ const getUser = (req, res) => {
 };
 
 const createNewUser = (req, res) => {
-  const data = req.boby;
+  const data = req.body;
 
-  if(data.firstName && data.lastName && data.email && data.password && data.birthday) {
+  if(data.first_name && data.last_name && data.email && data.password && data.birthday) {
     const data = createUser();
 
     res.status(201).json(data);
   } else {
-    res.status(400);
+    res.status(400).json({message: "Missing data"});
   }
 };
+
 
 /*
 only to prove the function createNewUser (post)
