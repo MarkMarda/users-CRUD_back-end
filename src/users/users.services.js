@@ -22,7 +22,7 @@ const createNewUser = (req, res) => {
   const data = req.body;
 
   if(data.first_name && data.last_name && data.email && data.password && data.birthday) {
-    const data = createUser();
+    const data = createUser(data);
 
     res.status(201).json(data);
   } else {
